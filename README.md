@@ -1,162 +1,74 @@
-# Computer_Networking_cisco
-INDEX
+# Computer Networking Cisco
 
-1…VLAN
+## Index
 
-2…INTERVLAN
+1. [VLAN](#vlan)
+2. [Inter-VLAN Routing](#inter-vlan-routing)
+3. [RIP](#rip)
+4. [Static Routing](#static-routing)
+5. [NAT](#nat)
+6. [Server](#server)
 
-3…RIP
+## VLAN
 
-4…STATIC ROUTING
+VLAN is a custom network that combines one or more local area networks into a logical network. It allows devices from multiple networks to be grouped into one virtual LAN, which is administered like a physical LAN.
 
-5…NAT  
-6…SERVER
+To configure VLAN in Cisco Packet Tracer, follow these steps:
 
-VLAN
+1. Assign laptops to VLANs: Configure laptop0 and laptop2 in VLAN 10, and laptop1 and laptop3 in VLAN 20.
 
-**VLAN** is a custom network which is created from one or more local
-area networks. It enables a group of devices available in multiple
-networks to be combined into one logical network. The result becomes a
-virtual LAN that is administered like a physical LAN. The full form of
-VLAN is defined as Virtual Local Area Network.
+2. Set IP addresses for VLANs:
+   - VLAN10 IP: 192.168.1.0/24
+   - VLAN20 IP: 192.168.2.0/24
 
-<img src="./media/image1.png" style="width:6.5in;height:2.50833in" />The
-below topology depicts a network having all hosts inside the same
-virtual LAN:
+3. Configure VLAN on Switch0:
+   - Use appropriate commands to configure VLAN on the switch.
 
-Now, we will configure and make it works in cisco packet tracer.
+4. Configure VLAN on Switch1:
+   - Configure VLAN on Switch1 using similar commands.
 
--\> let, laptop0 and laptop 2 is in vlan10, and laptop1 and laptop3 is
-in vlan20.
+5. Test VLAN connectivity: Ping between devices in VLAN 10 and VLAN 20 to verify connectivity.
 
-For configure vlan let,
+## Inter-VLAN Routing
 
-Vlan10 ip=192.168.1.0/24
+Inter-VLAN routing is necessary for connecting one VLAN to another. In this case, we connect Router0 to Switch1 for inter-VLAN routing.
 
-Vlan20 ip=192.168.2.0/24
+To configure inter-VLAN routing:
 
-<img src="./media/image2.png" style="width:7.57292in;height:5.04167in"
-alt="Text Description automatically generated" />Command use in switch0
-for configuring vlan….
+1. Configure trunking on Switch1:
+   - Use appropriate commands to configure trunking on the specified port.
 
-Now we need to do the same thing in switch1 for configuring vlan.
+2. Configure inter-VLAN routing on Router0:
+   - Access the router CLI and configure inter-VLAN routing.
 
-<img src="./media/image3.png" style="width:6.95833in;height:2.87361in"
-alt="Diagram Description automatically generated" />After configuring
-both of the switch now I will give the ip of every laptops for vlan 10
-and vlan 20.
+3. Set the default gateway for each VLAN:
+   - Assign default gateways to VLAN10 (192.168.1.1) and VLAN20 (192.168.2.1).
 
-Lets check the vlan is works or not….
+4. Test inter-VLAN routing: Ping between PCs in different VLANs to confirm connectivity.
 
-<img src="./media/image4.png"
-style="width:8.28255in;height:0.95833in" />Message:
+## RIP
 
-<img src="./media/image5.png" style="width:4.43403in;height:1.87708in"
-alt="Text Description automatically generated" />Pinging:
+Routing Information Protocol (RIP) is a distance-vector routing protocol. It allows routers to exchange routing tables with their neighbors.
 
-The vlan is works successfully.
+Perform RIP on the following routers:
+- Router0
+- Router1
+- Router3
+- Router2
 
-<img src="./media/image6.png" style="width:6.5in;height:2.16389in"
-alt="Table Description automatically generated with medium confidence" />Swtich0:
+After configuring RIP, test connectivity by pinging interfaces from the laptops.
 
-Switch1:
+## NAT
 
-<img src="./media/image7.png" style="width:6.5in;height:2.325in" />
+Network Address Translation (NAT) translates private IP addresses into public IP addresses. It helps conserve available IP addresses.
 
-INTER VLAN ROUTING
+Perform NAT in the topology using a router as the ISP.
 
-Inter vlan routing is need for connecting one vlan to another.
+Configure static routing in Router3 and Router4.
 
-Because of the inter vlan routing the router0 is connected to switch1 so
-we need to trunk in fa3/1 , lets go do it….
+Graphical user interface, text, application Description automatically generated
 
-Now we need to go in the router CLI to configure intervlan router
+Configure NAT and set up the server.
 
-<img src="./media/image8.png" style="width:6.5in;height:1.44583in" />
+Perform a search to test the network setup.
 
-<img src="./media/image9.png"
-style="width:6.77083in;height:4.52083in" />now we need to configure in
-Router0 for intervlan,
-
-Now we fixed the default gateway of vlan10-192.168.1.1
-
-And vlan20-192.168.2.1
-
-Now the intervlan routing is done
-
-Now we can access any pc of the vlan , lets
-
-Pinging-
-
-<img src="./media/image10.png"
-style="width:5.11458in;height:2.3808in" />
-
-The intervlan is done.
-
-<img src="./media/image11.png" style="width:6.5in;height:3.45069in" />The
-final form is
-
-RIP
-
-<img src="./media/image12.png"
-style="width:7.3125in;height:4.91667in" />*Routing Information
-Protocol* (RIP) is a distance-vector routing protocol. Routers running
-the distance-vector protocol send all or a portion of their routing
-tables in routing-update messages to their neighbors.
-
-We are performing rip in these 4 router ,
-
-First Router0:
-
-<img src="./media/image13.png" style="width:6.5in;height:3.65208in" /><img src="./media/image14.png" style="width:6.5in;height:4.01042in" />Router1:
-
-<img src="./media/image15.png"
-style="width:6.32292in;height:3.77153in" /><img src="./media/image16.png" style="width:6.5in;height:3.97569in" />Router3:
-
-Router2:
-
-Now all done, lets ping any of the four interface from the laptop….
-
-<img src="./media/image17.png" style="width:6.5in;height:2.90139in" />
-
-<img src="./media/image18.png"
-style="width:5.8125in;height:3.90139in" />We get reply from router
-interface, that’s we can say the rip is successfully done.
-
-NAT
-
-NAT, in which the Private IP address or local address are translated
-into the public IP address. NAT is used to slow down the rate of
-depletion of available IP address by translates the local IP or Private
-IP address into global or public ip address. NAT can be a one-to-one
-relation or many-to-one relation.
-
-For this well will take a router as isp , the we will perform NAT int
-our topology…it will be looks like this
-
-<img src="./media/image19.png" style="width:6.5in;height:5.31042in" />
-
-No we need to perform static routing in router 3 and 4,,
-
-For router 3..
-
-<img src="./media/image20.png" style="width:6.5in;height:1.93125in" />
-
-For router4…
-
-<img src="./media/image21.png" style="width:6.5in;height:2.41181in"
-alt="Graphical user interface, text, application Description automatically generated" />
-
-<img src="./media/image22.png" style="width:6.5in;height:5.11944in" />Now
-perform Nat
-
-now configure the server…
-
-<img src="./media/image23.png"
-style="width:5.94792in;height:2.55208in" />
-
-<img src="./media/image24.png" style="width:6.5in;height:4.59236in" />
-
-Lets do search
-
-<img src="./media/image25.png" style="width:6.5in;height:6.07917in" />
