@@ -11,7 +11,7 @@
 
 ## VLAN
 
-VLAN is a custom network that combines one or more local area networks into a logical network. It allows devices from multiple networks to be grouped into one virtual LAN, which is administered like a physical LAN.
+VLAN is a custom network that combines one or more local area networks into a logical network. It allows devices from multiple networks to be grouped into one virtual LAN, administered like a physical LAN.
 
 To configure VLAN in Cisco Packet Tracer, follow these steps:
 
